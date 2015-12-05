@@ -1,4 +1,4 @@
 Advent of Code
 ==============
 
-http://adventofcode.com/
+My [Advent of Code](http://adventofcode.com) solutions (JavaScript, Node.js).
