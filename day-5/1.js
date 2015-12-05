@@ -21,10 +21,12 @@ function isNice(string) {
     if (vowels.indexOf(char) !== -1) {
       foundVowels += 1;
     }
+    if (hasDoubleChar && foundVowels >= 3) {
+      return true;
+    }
     previousChar = char;
   }
-
-  return hasDoubleChar && foundVowels >= 3;
+  return false;
 }
 
 var amount = 0;
