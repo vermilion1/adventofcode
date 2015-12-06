@@ -1,0 +1,14 @@
+{
+  "name": "adventofcode",
+  "version": "0.0.1",
+  "description": "My Advent of Code solutions",
+  "author": "Vitalii Petrychuk <vitaliy@petrychuk.com>",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
