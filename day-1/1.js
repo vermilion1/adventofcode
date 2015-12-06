@@ -1,7 +1,8 @@
-var input = String(require('fs').readFileSync(__dirname + '/input.txt'));
+module.exports = function (input) {
+  'use strict';
 
-var floor = input.split('').reduce((prev, next) => {
-  return prev + (next === '(' ? 1 : -1);
-}, 0);
+  return input.split('').reduce((prev, next) => {
+    return prev + (next === '(' ? 1 : -1);
+  }, 0);
 
-console.log(floor);
+};
