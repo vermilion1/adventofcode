@@ -1,6 +1,9 @@
 module.exports = function (input, wires) {
   'use strict';
 
+  // I wish I have enough time to do this with single RegExp so it would simplify applyInstruction function.
+  // Maybe next time :)
+
   var expressions = {
     AND: /^([0-9a-z]+) AND ([0-9a-z]+) -> ([a-z]+)$/,
     OR: /^([0-9a-z]+) OR ([0-9a-z]+) -> ([a-z]+)$/,
