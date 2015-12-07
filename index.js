@@ -23,8 +23,7 @@ tasks.forEach(taskNumber => {
     console.log(`Task ${taskNumber}:`, result);
   }
   catch (e) {
-    var message = `Task number ${taskNumber} for day ${dayNumber} is not found.`;
-    throw new Error(message);
+    throw new Error(e);
   }
 });
 
