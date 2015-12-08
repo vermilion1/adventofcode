@@ -14,25 +14,27 @@ describe('Day 7', () => {
                NOT b -> i`).split('\n').map(line => line.trimLeft()).join('\n');
 
   it('Task 1', () => {
-    assert.equal(task1(data).d, 72);
-    assert.equal(task1(data).e, 507);
-    assert.equal(task1(data).f, 492);
-    assert.equal(task1(data).g, 114);
-    assert.equal(task1(data).h, 65412);
-    assert.equal(task1(data).i, 65079);
-    assert.equal(task1(data).a, 123);
-    assert.equal(task1(data).b, 456);
+    assert.equal(task1(data), 123);
+    assert.equal(task1.getSignals(data).d, 72);
+    assert.equal(task1.getSignals(data).e, 507);
+    assert.equal(task1.getSignals(data).f, 492);
+    assert.equal(task1.getSignals(data).g, 114);
+    assert.equal(task1.getSignals(data).h, 65412);
+    assert.equal(task1.getSignals(data).i, 65079);
+    assert.equal(task1.getSignals(data).a, 123);
+    assert.equal(task1.getSignals(data).b, 456);
   });
 
   it('Task 2', () => {
-    assert.equal(task2(data).d, 123);
-    assert.equal(task2(data).e, 123);
-    assert.equal(task2(data).f, 492);
-    assert.equal(task2(data).g, 30);
-    assert.equal(task2(data).h, 65412);
-    assert.equal(task2(data).i, 65412);
-    assert.equal(task2(data).a, 123);
-    assert.equal(task2(data).b, 123);
+    assert.equal(task2(data), 123);
+    assert.equal(task2.getSignals(data).d, 123);
+    assert.equal(task2.getSignals(data).e, 123);
+    assert.equal(task2.getSignals(data).f, 492);
+    assert.equal(task2.getSignals(data).g, 30);
+    assert.equal(task2.getSignals(data).h, 65412);
+    assert.equal(task2.getSignals(data).i, 65412);
+    assert.equal(task2.getSignals(data).a, 123);
+    assert.equal(task2.getSignals(data).b, 123);
   });
 
 });

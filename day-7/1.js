@@ -1,8 +1,9 @@
-module.exports = function (input, wires) {
-  'use strict';
+'use strict';
 
-  // I wish I have enough time to do this with single RegExp so it would simplify applyInstruction function.
-  // Maybe next time :)
+// I wish I have enough time to do this with single RegExp so it would simplify applyInstruction function.
+// Maybe next time :)
+
+function getSignals(input, wires) {
 
   var expressions = {
     AND: /^([0-9a-z]+) AND ([0-9a-z]+) -> ([a-z]+)$/,
@@ -88,4 +89,10 @@ module.exports = function (input, wires) {
 
   return applyInstructions(input.trim().split('\n'), wires || {});
 
+}
+
+module.exports = function (input, wires) {
+  return getSignals(input, wires).a;
 };
+
+module.exports.getSignals = getSignals;
