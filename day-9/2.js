@@ -1,12 +1,13 @@
+'use strict';
+
 var permute = require('../utils/permute');
 
-module.exports = function (input) {
-  'use strict';
+module.exports = (input) => {
 
   var re = /^(.*) to (.*) = (\d+)$/;
   var cities = {};
 
-  function calculateDistance(citiesNames) {
+  var calculateDistance = (citiesNames) => {
     return citiesNames.map((city, index) => {
       if (index > 0) {
         return cities[citiesNames[index - 1]][city];

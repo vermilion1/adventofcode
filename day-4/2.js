@@ -1,7 +1,8 @@
+'use strict';
+
 var crypto = require('crypto');
 
-module.exports = function (input) {
-  'use strict';
+module.exports = (input) => {
 
   var number = 1;
   var zeroes = '000000';

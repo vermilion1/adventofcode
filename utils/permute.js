@@ -1,6 +1,6 @@
 'use strict';
 
-function permute(chars, memo, result) {
+var permute = (chars, memo, result) => {
   memo || (memo = []);
   result || (result = []);
 
@@ -14,6 +14,6 @@ function permute(chars, memo, result) {
   }
 
   return result;
-}
+};
 
 module.exports = permute;

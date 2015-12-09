@@ -3,7 +3,7 @@
 // I wish I have enough time to do this with single RegExp so it would simplify applyInstruction function.
 // Maybe next time :)
 
-function getSignals(input, wires) {
+var getSignals = (input, wires) => {
 
   var expressions = {
     AND: /^([0-9a-z]+) AND ([0-9a-z]+) -> ([a-z]+)$/,
@@ -15,19 +15,17 @@ function getSignals(input, wires) {
     SIGNAL: /^([0-9]+) -> ([a-z]+)$/
   };
 
-  function isNumber(str) {
-    return !isNaN(Number(str));
-  }
+  var isNumber = (str) => !isNaN(Number(str));
 
-  function areWiresHaveSignal(wires) {
+  var areWiresHaveSignal = function (wires) {
     return ![].slice.call(arguments, 1).find(item => {
       return isNumber(item) ? false : wires[item] === void 0;
     });
-  }
+  };
 
-  function applyInstruction(instruction, wires) {
+  var applyInstruction = (instruction, wires) => {
     var match;
-    var getWireSignalByMatchIndex = function (index) {
+    var getWireSignalByMatchIndex = (index) => {
       return isNumber(match[index]) ? Number(match[index]) : wires[match[index]];
     };
 
@@ -64,7 +62,7 @@ function getSignals(input, wires) {
     return false;
   }
 
-  function applyInstructions(instructions, wires) {
+  var applyInstructions = (instructions, wires) => {
     var queue = [];
 
     instructions.forEach(instruction => {
@@ -85,13 +83,13 @@ function getSignals(input, wires) {
     }
 
     return wires;
-  }
+  };
 
   return applyInstructions(input.trim().split('\n'), wires || {});
 
-}
+};
 
-module.exports = function (input, wires) {
+module.exports = (input, wires) => {
   return getSignals(input, wires).a;
 };
 

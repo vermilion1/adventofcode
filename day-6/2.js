@@ -1,5 +1,6 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
+
+module.exports = (input) => {
 
   var SIZE = 1000;
   var TURN_ON = 'turn on';
@@ -9,11 +10,11 @@ module.exports = function (input) {
 
   var map = [];
 
-  function followInstructions(instructions) {
+  var followInstructions = (instructions) => {
     instructions.forEach(followInstruction);
-  }
+  };
 
-  function followInstruction(instruction) {
+  var followInstruction = (instruction) => {
     var parsed = instruction.match(RE);
     if (parsed === null) {
       return;
@@ -38,28 +39,28 @@ module.exports = function (input) {
         doWithMap(fromX, fromY, throughX, throughY, (value) => value + 2);
         break;
     }
-  }
+  };
 
-  function createDefaultMap() {
+  var createDefaultMap = () => {
     for (var i = 0; i < SIZE; i++) {
       map[i] = new Array(SIZE);
       for (var j = 0; j < SIZE; j++) {
         map[i][j] = 0;
       }
     }
-  }
+  };
 
-  function doWithMap(fromX, fromY, throughX, throughY, doFn) {
+  var doWithMap = (fromX, fromY, throughX, throughY, doFn) => {
     for (var i = fromX; i <= throughX; i++) {
       for (var j = fromY; j <= throughY; j++) {
         map[i][j] = doFn(map[i][j]);
       }
     }
-  }
+  };
 
-  function countLit() {
+  var countLit = () => {
     return map.join().split(',').map(Number).reduce((memo, next) => memo + next);
-  }
+  };
 
   createDefaultMap();
   followInstructions(input.split('\n'));

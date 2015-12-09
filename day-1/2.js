@@ -1,5 +1,6 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
+
+module.exports = (input) => {
 
   var currentFloor = 0;
   var position = -1;

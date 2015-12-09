@@ -1,11 +1,12 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
+
+module.exports = (input) => {
 
   var vowels = 'aeiou'.split('');
   var forbidden = ['ab', 'cd', 'pq', 'xy'];
   var strings = input.split('\n');
 
-  function isNice(string) {
+  var isNice = (string) => {
     var forbiddenString = forbidden.find(phrase => string.indexOf(phrase) !== -1);
     if (forbiddenString) {
       return false;
@@ -28,7 +29,7 @@ module.exports = function (input) {
       previousChar = char;
     }
     return false;
-  }
+  };
 
   return strings.reduce((prev, next) => prev + Number(isNice(next)), 0);
 

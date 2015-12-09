@@ -2,11 +2,11 @@
 
 var task1 = require('./1');
 
-function getSignals(input) {
+var getSignals = (input) => {
   return task1.getSignals(input, {b: task1(input)})
-}
+};
 
-module.exports = function (input) {
+module.exports = (input) => {
   return getSignals(input).a;
 };
 

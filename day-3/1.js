@@ -1,11 +1,12 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
 
-  function visit(x, y) {
+module.exports = (input) => {
+
+  var visit = (x, y) => {
     var key = [x, y].join(',');
     visited[key] || (visited[key] = 0);
     visited[key]++;
-  }
+  };
 
   var x = 0;
   var y = 0;

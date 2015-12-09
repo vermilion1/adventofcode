@@ -1,9 +1,10 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
+
+module.exports = (input) => {
 
   var strings = input.split('\n');
 
-  function isNice(string) {
+  var isNice = (string) => {
     var hasPair = false;
     var repeats = false;
     for (var i = 0; i < string.length; i++) {
@@ -18,7 +19,7 @@ module.exports = function (input) {
       }
     }
     return false;
-  }
+  };
 
   return strings.reduce((prev, next) => prev + Number(isNice(next)), 0);
 

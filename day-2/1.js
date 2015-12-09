@@ -1,7 +1,8 @@
-module.exports = function (input) {
-  'use strict';
+'use strict';
 
-  function calculate(dimensions) {
+module.exports = (input) => {
+
+  var calculate = (dimensions) => {
     var dimensionsArr = dimensions.split('x');
     var length = dimensionsArr[0];
     var width = dimensionsArr[1];
@@ -11,7 +12,7 @@ module.exports = function (input) {
     var wh = width * height;
     var min = Math.min(lw, lh, wh);
     return (2 * lw) + (2 * lh) + (2 * wh) + min;
-  }
+  };
 
   return input.split('\n').reduce((prev, dimensions) => {
     return prev + calculate(dimensions);
