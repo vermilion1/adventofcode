@@ -9,7 +9,7 @@ if (dayNumber === void 0) {
 }
 
 var tasks = args.slice(1).length ? args.slice(1) : [1, 2];
-var dayPath = './day-' + dayNumber;
+var dayPath = './day-' + ('0' + dayNumber).slice(-2);
 var input = String(fs.readFileSync(dayPath + '/input.txt'));
 
 var heading = 'Running day ' + dayNumber;
