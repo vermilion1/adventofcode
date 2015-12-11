@@ -6,9 +6,12 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "test": "mocha */test.js"
+    "test": "mocha */test.js --timeout 5000"
   },
   "devDependencies": {
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "slang": "^0.3.0"
   }
 }

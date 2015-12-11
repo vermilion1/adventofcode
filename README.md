@@ -7,6 +7,7 @@ My [Advent of Code](http://adventofcode.com) solutions (JavaScript, Node.js).
 Run day
 -------
 
+    npm install
     npm start DAY [...TASK_NUMBER]
     
 For example
