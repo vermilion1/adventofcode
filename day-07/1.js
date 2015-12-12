@@ -3,6 +3,8 @@
 // I wish I have enough time to do this with single RegExp so it would simplify applyInstruction function.
 // Maybe next time :)
 
+var is = require('../utils/is');
+
 var getSignals = (input, wires) => {
 
   var expressions = {
@@ -15,18 +17,16 @@ var getSignals = (input, wires) => {
     SIGNAL: /^([0-9]+) -> ([a-z]+)$/
   };
 
-  var isNumber = (str) => !isNaN(Number(str));
-
   var areWiresHaveSignal = function (wires) {
     return ![].slice.call(arguments, 1).find(item => {
-      return isNumber(item) ? false : wires[item] === void 0;
+      return is.number(item) ? false : wires[item] === void 0;
     });
   };
 
   var applyInstruction = (instruction, wires) => {
     var match;
     var getWireSignalByMatchIndex = (index) => {
-      return isNumber(match[index]) ? Number(match[index]) : wires[match[index]];
+      return is.number(match[index]) ? Number(match[index]) : wires[match[index]];
     };
 
     if (match = instruction.match(expressions.AND)) {

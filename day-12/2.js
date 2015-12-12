@@ -1,19 +1,17 @@
 'use strict';
 
+var is = require('../utils/is');
+
 module.exports = (input) => {
 
-  var isArray = (data) => Array.isArray(data);
-  var isObject = (data) => typeof data === 'object';
-  var isNumber = (data) => !isNaN(Number(data));
-
   var sumNumbers = (data) => {
-    if (isArray(data)) {
+    if (is.array(data)) {
       return data.reduce((prev, item) => prev + sumNumbers(item), 0)
     }
-    else if (isNumber(data)) {
+    else if (is.number(data)) {
       return data;
     }
-    else if (isObject(data)) {
+    else if (is.object(data)) {
       var values = Object.keys(data).map(key => data[key]);
       if (values.indexOf('red') === -1) {
         return sumNumbers(values);
