@@ -19,8 +19,10 @@ console.log(new Array(heading.length + 1).join('-'));
 tasks.forEach(taskNumber => {
   try {
     var task = require([dayPath, taskNumber].join('/'));
-    var result = task(input);
-    console.log(`Task ${taskNumber}:`, result);
+    var timeLabel = 'Done in';
+    console.time(timeLabel);
+    console.log(`Task #${taskNumber}:`, task(input));
+    console.timeEnd(timeLabel);
   }
   catch (e) {
     throw new Error(e);
