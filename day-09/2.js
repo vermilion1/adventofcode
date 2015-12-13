@@ -1,5 +1,6 @@
 'use strict';
 
+var max = require('../utils/max');
 var permute = require('../utils/permute');
 
 module.exports = (input) => {
@@ -15,7 +16,7 @@ module.exports = (input) => {
         return 0;
       }
     }).reduce((prev, next) => prev + next);
-  }
+  };
 
   input.trim().split('\n').forEach(route => {
     var parsed = route.match(re);
@@ -31,6 +32,6 @@ module.exports = (input) => {
   var permutations = permute(Object.keys(cities));
   var distances = permutations.map(cities => calculateDistance(cities));
 
-  return Math.max.apply(Math, distances);
+  return max(distances);
 
 }; 

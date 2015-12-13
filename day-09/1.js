@@ -1,5 +1,6 @@
 'use strict';
 
+var min = require('../utils/min');
 var permute = require('../utils/permute');
 
 module.exports = (input) => {
@@ -31,6 +32,6 @@ module.exports = (input) => {
   var permutations = permute(Object.keys(cities));
   var distances = permutations.map(cities => calculateDistance(cities));
 
-  return Math.min.apply(Math, distances);
+  return min(distances);
 
 }; 

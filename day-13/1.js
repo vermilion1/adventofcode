@@ -1,5 +1,6 @@
 'use strict';
 
+var max = require('../utils/max');
 var permute = require('../utils/permute');
 
 module.exports = (input) => {
@@ -32,7 +33,7 @@ module.exports = (input) => {
         return prev + rightTo + leftTo;
       }, 0);
     });
-    return Math.max.apply(Math, happiness);
+    return max(happiness);
   };
 
   return calculateHappiness(input.trim().split('\n'));
