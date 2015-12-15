@@ -12,7 +12,7 @@ describe('Day 14', () => {
   });
 
   it('Task 2', () => {
-    // ...
+    assert.equal(task2.getHighestScore(input, 1000), 689);
   });
 
 });
