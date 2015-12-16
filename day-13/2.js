@@ -32,7 +32,7 @@ module.exports = (input) => {
 
   var calculateHappiness = (data) => {
     var map = addMyselfToMap(createMap(data));
-    var options = permute(Object.keys(map));
+    var options = permute.list(Object.keys(map));
     var happiness = options.map(people => {
       return people.reduce((prev, next, currentIndex, array) => {
         var lastIndex = array.length - 1;

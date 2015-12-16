@@ -29,7 +29,7 @@ module.exports = (input) => {
     cityToMap[cityFrom] = distance;
   });
 
-  var permutations = permute(Object.keys(cities));
+  var permutations = permute.list(Object.keys(cities));
   var distances = permutations.map(cities => calculateDistance(cities));
 
   return min(distances);
