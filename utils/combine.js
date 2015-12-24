@@ -1,7 +1,8 @@
 'use strict';
 
-var combineList = function (list, min) {
+var combineList = function (list, min, max) {
   min || (min = 1);
+  max || (max = list.length);
 
   var combine = function (n, src, got, all) {
     if (n === 0) {
@@ -16,7 +17,7 @@ var combineList = function (list, min) {
   };
 
   var all = [];
-  for (var i = min; i < list.length; i++) {
+  for (var i = min; i < max; i++) {
     combine(i, list, [], all);
   }
 
