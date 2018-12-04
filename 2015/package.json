@@ -1,7 +1,5 @@
 {
-  "name": "adventofcode",
-  "version": "0.0.1",
-  "description": "My Advent of Code solutions",
+  "description": "My Advent of Code 2015 solutions",
   "author": "Vitalii Petrychuk <vitaliy@petrychuk.com>",
   "private": true,
   "scripts": {
