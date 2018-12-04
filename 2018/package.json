@@ -1,0 +1,8 @@
+{
+  "description": "My Advent of Code 2018 solutions",
+  "author": "Vitalii Petrychuk <vitaliy@petrychuk.com>",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  }
+}
