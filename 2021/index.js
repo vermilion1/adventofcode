@@ -25,7 +25,7 @@ tasks.forEach(taskNumber => {
     console.timeEnd(timeLabel);
   }
   catch (e) {
-    throw new Error(e);
+    throw new Error(e.stack);
   }
 });
 
