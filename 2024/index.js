@@ -1,28 +1,26 @@
 const fs = require("fs");
 
-const args = process.argv.slice(2);
-const dayNumber = args[0];
+const [dayNumber, ...tasksInput] = process.argv.slice(2);
 if (!dayNumber) {
   throw new Error("Please provide a day to run");
 }
 
-const tasks = args.slice(1).length ? args.slice(1) : [1, 2];
+const tasks = tasksInput.length ? tasksInput : [1, 2];
 const dayPath = `./day-${dayNumber.padStart(2, "0")}`;
 const input = fs.readFileSync(`${dayPath}/input.txt`, "utf8");
 
 const heading = `Running day ${dayNumber}`;
 console.log(heading);
-console.log("-".repeat(heading.length + 1));
+console.log("-".repeat(heading.length));
 
 tasks.forEach(async (taskNumber) => {
   try {
     const task = require(`${dayPath}/${taskNumber}`);
-    console.time(`Done in`);
-    console.log(`Task #${taskNumber}:`, task(input));
-    console.timeEnd();
+    const start = performance.now();
+    const result = task(input);
+    const duration = performance.now() - start;
+    console.log(`Task #${taskNumber}: ${result} (${duration.toFixed(2)}ms)`);
   } catch (e) {
     throw new Error(e.stack);
   }
 });
-
-console.log();
