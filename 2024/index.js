@@ -13,14 +13,16 @@ const heading = `Running day ${dayNumber}`;
 console.log(heading);
 console.log("-".repeat(heading.length));
 
-tasks.forEach(async (taskNumber) => {
-  try {
-    const task = require(`${dayPath}/${taskNumber}`);
-    const start = performance.now();
-    const result = task(input);
-    const duration = performance.now() - start;
-    console.log(`Task #${taskNumber}: ${result} (${duration.toFixed(2)}ms)`);
-  } catch (e) {
-    throw new Error(e.stack);
+(async () => {
+  for (const taskNumber of tasks) {
+    try {
+      const task = require(`${dayPath}/${taskNumber}`);
+      const start = performance.now();
+      const result = await task(input);
+      const duration = performance.now() - start;
+      console.log(`Task #${taskNumber}: ${result} (${duration.toFixed(2)}ms)`);
+    } catch (e) {
+      throw new Error(e.stack);
+    }
   }
-});
+})();
